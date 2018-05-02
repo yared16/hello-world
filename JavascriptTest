@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function getDate(){
+				document.getElementById('demo').innerHTML = Date();
+			}
+			function showDate(){
+				document.getElementById('demo').style.display = 'block';
+			}
+			function hideDate(){
+				document.getElementById('demo').style.display = 'none';
+			}
+			function changeColor(){
+				document.getElementById('demo').style.color = 'red'; 
+			}
+
+			function myFunction() {
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value;
+				var z = document.getElementById("z").value;
+				var sum = x + " " + y + " " + z;
+				document.getElementById("demo").innerHTML = sum;
+			}
+
+			function clipboard() {
+  				var copy1 = document.getElementById("input1");
+				var copy2 = document.getElementById("input2");
+				var copy = copy1 + copy2;
+  				copy.select();
+  				document.execCommand("Copy");
+  				alert("Copied the text: " + copy.value);
+			}
+		</script>
+
+		<style>
+			
+		</style>
+
+	</head>
+
+	<body>
+
+		<h1>My First JavaScript</h1>
+		
+		<h2>Date and Time</h2>
+
+		<button onclick="getDate()">Display Date and Time</button>
+		<button onclick="showDate()">Show Date and Time</button>
+		<button onclick="hideDate()">Hide Date and Time</button>
+		<button onclick="changeColor()">Change Color</button>
+
+
+		<h2>Input and Output</h2>
+		
+		
+		<input type="text" id="x">
+		<input type="text" id="y">
+		<input type="text" id="z">
+
+		<button onclick="myFunction()">Copy</button>
+
+		<p id="demo"></p>
+
+		<h2>Copy to Clipboard</h2>
+
+		<input type="text" id="input1">
+		<input type="text" id="input2">
+		<button onclick="clipboard()">Copy text</button>
+
+	</body>
+</html> 
