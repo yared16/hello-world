@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	function showNav(shown, hidden1, hidden2) {
+	  document.getElementById(shown).style.display='block';
+	  document.getElementById(hidden1).style.display='none';
+	  document.getElementById(hidden2).style.display='none';
+	  return false;
+	}
+	function showMenu(shown, hidden1, hidden2) {
+	  document.getElementById(shown).style.display='block';
+	  document.getElementById(hidden1).style.display='none';
+	  document.getElementById(hidden2).style.display='none';
+	  return false;
+	}
+	</script>
+	<style>
+		body {margin: 0;}
+		
+		/* Top Bar */
+		h1.name {
+			text-align: center;
+			margin: 0 auto;
+			padding: 25px 0 0 0;
+			height: 75px;
+			font-size: 38px;
+		}
+		ul.nav {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
+		ul.nav li {float: left;}
+		ul.nav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 24px 14px 24px;
+			text-decoration: none;
+		}
+		ul.nav li a:hover:not(.active) {background-color: #111;}
+		ul.nav li a.active {background-color: #4CAF50;}
+		ul.nav li.right {float: right;}
+		@media screen and (max-width: 600px){
+			ul.nav li.right, 
+			ul.nav li {float: none;}
+		}
+		
+		/* Home Page */
+		#home h1 {
+			font-size: 80px;
+			text-align: center;
+		}
+		#home p {
+			font-size: 45px;
+			text-align: center;
+		}
+		
+		/* Menu */
+		#menu {
+			text-align: center;
+		}
+		#menu table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#menu ul{
+			list-style-type: none;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+			width: 333px;
+		}
+		#menu li {float: left;}
+		#menu li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 24px 14px 24px;
+			text-decoration: none;
+		}
+		#menu li a:hover:not(.active) {background-color: #111;}
+		#menu li a.active {background-color: #4CAF50;}
+		
+		/* About */
+		#about {
+			text-align: center;
+		}
+		#about table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="topbar">
+		<h1 class="name">Cherry Blossom</h1>
+		<ul class="nav">
+			<li><a href="#" onclick="return showNav('home','menu','about');">Home</a></li>
+			<li><a href="#" onclick="return showNav('menu','home','about');">Menu</a></li>
+			<li class="right"><a href="#" onclick="return showNav('about','home','menu');">About Us</a></li>
+		</ul>
+	</div>
+	
+	<div id="home">
+		<h1>Cherry Blossom</h1>
+		<p>Noodle Cafe</p>
+	</div>
+
+	<div id="menu" style="display:none">
+		<h1>Menu</h1>
+		<ul>
+			<li><a href="#" onclick="return showMenu('lunch','sushi','noodle');">Lunch Specials</a></li>
+			<li><a href="#" onclick="return showMenu('sushi','lunch','noodle');">Sushi</a></li>
+			<li><a href="#" onclick="return showMenu('noodle','lunch','sushi');">Noodles</a></li>
+		</ul>
+		<div id="lunch" style="display:none">
+			<h2>Lunch Specials</h2>
+			<p>Monday - Friday<br> 11:00am to 2:30pm</p>
+			<table>
+				<tr>
+					<th>$7.50</th>
+					<th>$8.50</th>
+				</tr>
+				<tr>
+					<td>Tokyo Chicken Coleslaw</td>
+					<td>Miso Ramen</td>
+				</tr>
+				<tr>
+					<td>Chicken Tender Orient</td>
+					<td>Calamari Salad</td>
+				</tr>
+				<tr>
+					<td>Tempura Bowl</td>
+					<td>Chicken Katsu</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Ika Yakisoba</td>
+				</tr>
+				<tr>
+					<th>$9.50</th>
+					<th>$10.50</th>
+				</tr>
+				<tr>
+					<td>Grilled Salmon</td>
+					<td>Chicken Parmesan</td>
+				</tr>
+				<tr>
+					<td>Chicken Arrabbiata</td>
+					<td>Ramen Combo Special</td>
+				</tr>
+				<tr>
+					<td>Spaghetti Bolognese</td>
+					<td>Udon Combo Special</td>
+				</tr>
+				<tr>
+					<td>Grilled Chicken Salad</td>
+					<td>Sushi Roll Combo</td>
+				</tr>
+				<tr>
+					<td>Pork Belly Yakisoba</td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>$11.50</th>
+				</tr>
+				<tr>
+					<td>Yakiniku</td>
+				</tr>
+				<tr>
+					<td>Hot Thai Beef Salad</td>
+				</tr>
+				<tr>
+					<td>Daily Special Lunch Box</td>
+				</tr>
+			</table>
+		</div>
+		<div id="sushi" style="display:none">
+			<h2>Sushi</h2>
+			<table>
+				<tr>
+					<th>Combos</th>
+				</tr>
+				<tr>
+					<td>Sushi Roll Combo</td>
+					<td>$12.50</td>
+				</tr>
+				<tr>
+					<td>Assorted Nigiri</td>
+					<td>$15.60</td>
+				</tr>
+				<tr>
+					<th>A la carte</th>
+				</tr>
+				<tr>
+					<td>Nigiri</td>
+					<td>$5.20</td>
+				</tr>
+				<tr>
+					<td>Baja Norte</td>
+					<td>$6.75</td>
+				</tr>
+				<tr>
+					<td>California Roll</td>
+					<td>$5.15</td>
+				</tr>
+				<tr>
+					<td>California Crunchy Roll</td>
+					<td>$5.50</td>
+				</tr>
+				<tr>
+					<td>Alaskan Roll</td>
+					<td>$5.15</td>
+				</tr>
+			</table>
+		</div>
+		<div id="noodle" style="display:none">
+			<h2>Noodles</h2>
+			<table>
+				<tr>
+					<th>Iron Pot</th>
+				</tr>
+				<tr>
+					<td>Nabeyaki Udon</td>
+					<td>$14.50</td>
+				</tr>
+				<tr>
+					<td>Udon Suki</td>
+					<td>$14.50</td>
+				</tr>
+				<tr>
+					<th>Cold Noodles</th>
+				</tr>
+				<tr>
+					<td>Zaru Soba</td>
+					<td>$7.25</td>
+				</tr>
+				<tr>
+					<td>Hiyashi Chu-ka</td>
+					<td>$10.35</td>
+				</tr>
+				<tr>
+					<th>Asian Noodles</th>
+				</tr>
+				<tr>
+					<td>Ika Yakisoba</td>
+					<td>$10.35</td>
+				</tr>
+				<tr>
+					<td>Champon</td>
+					<td>$13.95</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+	
+	<div id="about" style="display:none">
+		<h1>About Us</h1>
+		<p>Featuring mouth-watering noodle dishes from all over the world.</p>
+		<p>Enjoy our unique dining experience with carefully selected wines and beer.</p>
+		<h2>Contact Us</h2>
+		<p>(602) 248-9090 </p>
+		<h2>Location</h2>
+		<p>914 East Camelback Road  Phoenix, AZ 85014</p>
+		<h2>Hours</h2>
+		<table id="hours">
+			<tr>
+				<th>Sunday</th>
+				<td>11:00am - 9:30pm</td>
+			</tr>
+			<tr>
+				<th>Monday</th>
+				<td>11:00am - 9:30pm</td>
+			</tr>
+			<tr>
+				<th>Tuesday</th>
+				<td>11:00am - 9:30pm</td>
+			</tr>
+			<tr>
+				<th>Wednesday</th>
+				<td>11:00am - 9:30pm</td>
+			</tr>
+			<tr>
+				<th>Thursday</th>
+				<td>11:00am - 9:30pm</td>
+			</tr>
+			<tr>
+				<th>Friday</th>
+				<td>11:00am - 10:30pm</td>
+			</tr>
+			<tr>
+				<th>Saterday</th>
+				<td>11:00am - 10:30pm</td>
+			</tr>
+		</table>
+		
+	</div>
+	
+</body>
+</html>
+
